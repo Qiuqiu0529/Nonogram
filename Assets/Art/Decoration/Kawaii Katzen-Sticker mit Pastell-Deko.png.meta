@@ -1,0 +1,1208 @@
+fileFormatVersion: 2
+guid: 61e09e93362246b488649674ef021c65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3344654160555891374
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_0
+  - first:
+      213: 4553680226822170126
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_1
+  - first:
+      213: 8480106282687825424
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_2
+  - first:
+      213: 1439830797177753846
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_3
+  - first:
+      213: -2785551156131931128
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_4
+  - first:
+      213: 326619871756777753
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_5
+  - first:
+      213: -5773279145304936922
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_6
+  - first:
+      213: 5420209042180132926
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_7
+  - first:
+      213: 8768360489502541474
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_8
+  - first:
+      213: -3162724860763293676
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_9
+  - first:
+      213: 4781777325479851232
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_10
+  - first:
+      213: 2415354615400605979
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_11
+  - first:
+      213: 1842570754198761149
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_12
+  - first:
+      213: -8493400010704355973
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_13
+  - first:
+      213: 8685934282293426371
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_14
+  - first:
+      213: 4914478419766364837
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_15
+  - first:
+      213: 5021709512037731820
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_16
+  - first:
+      213: 4552119073593699039
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_17
+  - first:
+      213: 2317196487899410814
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_18
+  - first:
+      213: -8988565542571177801
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_19
+  - first:
+      213: -4050099108768808837
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_20
+  - first:
+      213: -6962947130494163964
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_21
+  - first:
+      213: -1710539565788864020
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_22
+  - first:
+      213: -6260383400651315786
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_23
+  - first:
+      213: 6052399311894160373
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_24
+  - first:
+      213: -8652031995871459478
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_25
+  - first:
+      213: -5544853960963115055
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_26
+  - first:
+      213: 2610620450071775660
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_27
+  - first:
+      213: -3624917445416754120
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_28
+  - first:
+      213: 6704053937538598817
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_29
+  - first:
+      213: -967987760686966323
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_30
+  - first:
+      213: 7225413141969057233
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_31
+  - first:
+      213: 2631747032142834464
+    second: Kawaii Katzen-Sticker mit Pastell-Deko_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 808
+        width: 303
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255a88ff2c66591d0800000000000000
+      internalID: -3344654160555891374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 860
+        width: 208
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06a4743a0ce13f30800000000000000
+      internalID: 4553680226822170126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_2
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 830
+        width: 211
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0168a2d0cb36fa570800000000000000
+      internalID: 8480106282687825424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_3
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 834
+        width: 165
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f092724b7e4bf310800000000000000
+      internalID: 1439830797177753846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_4
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 834
+        width: 157
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80cd3136bfbb759d0800000000000000
+      internalID: -2785551156131931128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_5
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 799
+        width: 150
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91975a8fa03688400800000000000000
+      internalID: 326619871756777753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_6
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 846
+        width: 117
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62eadea943131efa0800000000000000
+      internalID: -5773279145304936922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_7
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 843
+        width: 108
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30d1870863783b40800000000000000
+      internalID: 5420209042180132926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_8
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 931
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a68e5f88697fa970800000000000000
+      internalID: 8768360489502541474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_9
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 910
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41838e7fe7ebb14d0800000000000000
+      internalID: -3162724860763293676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_10
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 877
+        width: 39
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e47e3084294c5240800000000000000
+      internalID: 4781777325479851232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 628
+        width: 231
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19ad81c930158120800000000000000
+      internalID: 2415354615400605979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_12
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 624
+        width: 173
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe6a8da650229910800000000000000
+      internalID: 1842570754198761149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_13
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 636
+        width: 192
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7dfaa2b0b1612a80800000000000000
+      internalID: -8493400010704355973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_14
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 622
+        width: 145
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8bc7ea533aa8870800000000000000
+      internalID: 8685934282293426371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_15
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 630
+        width: 147
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa4f72b51cb33440800000000000000
+      internalID: 4914478419766364837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_16
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 624
+        width: 251
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced853ee132b0b540800000000000000
+      internalID: 5021709512037731820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_17
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 620
+        width: 223
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda25d4ed206c2f30800000000000000
+      internalID: 4552119073593699039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_18
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 392
+        width: 181
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71f600cde5582020800000000000000
+      internalID: 2317196487899410814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 391
+        width: 226
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b88ab23343324380800000000000000
+      internalID: -8988565542571177801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_20
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 387
+        width: 187
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7085b4a1582bc7c0800000000000000
+      internalID: -4050099108768808837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_21
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 421
+        width: 176
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404e111e974ae5f90800000000000000
+      internalID: -6962947130494163964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_22
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 487
+        width: 274
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce167e6e351f248e0800000000000000
+      internalID: -1710539565788864020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_23
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 452
+        width: 172
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b52d6e4776ae19a0800000000000000
+      internalID: -6260383400651315786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_24
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 448
+        width: 122
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f325407b117ef350800000000000000
+      internalID: 6052399311894160373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_25
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 475
+        width: 81
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6784cc7dbecde780800000000000000
+      internalID: -8652031995871459478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_26
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 533
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7306d43b8bc03b0800000000000000
+      internalID: -5544853960963115055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_27
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 459
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca906e9b779ca3420800000000000000
+      internalID: 2610620450071775660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_28
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 224
+        width: 302
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83461ddf9c4b1bdc0800000000000000
+      internalID: -3624917445416754120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_29
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 240
+        width: 165
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a70c0e5985990d50800000000000000
+      internalID: 6704053937538598817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_30
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 244
+        width: 165
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9d351a2440192f0800000000000000
+      internalID: -967987760686966323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 240
+        width: 148
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5318288f2d54460800000000000000
+      internalID: 7225413141969057233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_32
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 240
+        width: 154
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bef8d6bf7d58420800000000000000
+      internalID: 2631747032142834464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_33
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 240
+        width: 175
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18177ab52d6d04041a919fbd773cc97f
+      internalID: -229120323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_34
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 240
+        width: 151
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113020242fbe622408a71cff880b8ce5
+      internalID: 1004281743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_35
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 256
+        width: 140
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05905382a3a0ff45a90a46df99ea8ef
+      internalID: -2072177475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 34
+        width: 354
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ee09a618c3b454085a02cad3a43077
+      internalID: 1653041193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_37
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 37
+        width: 219
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e380b932b74d04498ee3cd5ed95b35c
+      internalID: -1638707962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_38
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 32
+        width: 177
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ed9d79034a2df46ac2485c98d129ce
+      internalID: -262664617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_39
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 37
+        width: 262
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4351b04d85d12f478a31c479e4e0808
+      internalID: 203819934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_40
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 41
+        width: 199
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad0ed037afe1cd48853f4de98699701
+      internalID: -1399683138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kawaii Katzen-Sticker mit Pastell-Deko_41
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 39
+        width: 265
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61fd354c5c29e5438064a603bd4d76b
+      internalID: 868138750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1614cefd4c1d5354fa4203cc859d0dfb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kawaii Katzen-Sticker mit Pastell-Deko_0: -3344654160555891374
+      Kawaii Katzen-Sticker mit Pastell-Deko_1: 4553680226822170126
+      Kawaii Katzen-Sticker mit Pastell-Deko_10: 4781777325479851232
+      Kawaii Katzen-Sticker mit Pastell-Deko_11: 2415354615400605979
+      Kawaii Katzen-Sticker mit Pastell-Deko_12: 1842570754198761149
+      Kawaii Katzen-Sticker mit Pastell-Deko_13: -8493400010704355973
+      Kawaii Katzen-Sticker mit Pastell-Deko_14: 8685934282293426371
+      Kawaii Katzen-Sticker mit Pastell-Deko_15: 4914478419766364837
+      Kawaii Katzen-Sticker mit Pastell-Deko_16: 5021709512037731820
+      Kawaii Katzen-Sticker mit Pastell-Deko_17: 4552119073593699039
+      Kawaii Katzen-Sticker mit Pastell-Deko_18: 2317196487899410814
+      Kawaii Katzen-Sticker mit Pastell-Deko_19: -8988565542571177801
+      Kawaii Katzen-Sticker mit Pastell-Deko_2: 8480106282687825424
+      Kawaii Katzen-Sticker mit Pastell-Deko_20: -4050099108768808837
+      Kawaii Katzen-Sticker mit Pastell-Deko_21: -6962947130494163964
+      Kawaii Katzen-Sticker mit Pastell-Deko_22: -1710539565788864020
+      Kawaii Katzen-Sticker mit Pastell-Deko_23: -6260383400651315786
+      Kawaii Katzen-Sticker mit Pastell-Deko_24: 6052399311894160373
+      Kawaii Katzen-Sticker mit Pastell-Deko_25: -8652031995871459478
+      Kawaii Katzen-Sticker mit Pastell-Deko_26: -5544853960963115055
+      Kawaii Katzen-Sticker mit Pastell-Deko_27: 2610620450071775660
+      Kawaii Katzen-Sticker mit Pastell-Deko_28: -3624917445416754120
+      Kawaii Katzen-Sticker mit Pastell-Deko_29: 6704053937538598817
+      Kawaii Katzen-Sticker mit Pastell-Deko_3: 1439830797177753846
+      Kawaii Katzen-Sticker mit Pastell-Deko_30: -967987760686966323
+      Kawaii Katzen-Sticker mit Pastell-Deko_31: 7225413141969057233
+      Kawaii Katzen-Sticker mit Pastell-Deko_32: 2631747032142834464
+      Kawaii Katzen-Sticker mit Pastell-Deko_33: -229120323
+      Kawaii Katzen-Sticker mit Pastell-Deko_34: 1004281743
+      Kawaii Katzen-Sticker mit Pastell-Deko_35: -2072177475
+      Kawaii Katzen-Sticker mit Pastell-Deko_36: 1653041193
+      Kawaii Katzen-Sticker mit Pastell-Deko_37: -1638707962
+      Kawaii Katzen-Sticker mit Pastell-Deko_38: -262664617
+      Kawaii Katzen-Sticker mit Pastell-Deko_39: 203819934
+      Kawaii Katzen-Sticker mit Pastell-Deko_4: -2785551156131931128
+      Kawaii Katzen-Sticker mit Pastell-Deko_40: -1399683138
+      Kawaii Katzen-Sticker mit Pastell-Deko_41: 868138750
+      Kawaii Katzen-Sticker mit Pastell-Deko_5: 326619871756777753
+      Kawaii Katzen-Sticker mit Pastell-Deko_6: -5773279145304936922
+      Kawaii Katzen-Sticker mit Pastell-Deko_7: 5420209042180132926
+      Kawaii Katzen-Sticker mit Pastell-Deko_8: 8768360489502541474
+      Kawaii Katzen-Sticker mit Pastell-Deko_9: -3162724860763293676
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
