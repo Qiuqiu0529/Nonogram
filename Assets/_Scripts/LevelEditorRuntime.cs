@@ -33,7 +33,8 @@ public partial class LevelEditorRuntime : MonoBehaviour
     bool patternView;
     Sprite defaultInsideSprite;
     int width = 10, height = 10;
-    [SerializeField, Min(1)] int clueFontSize = 14;
+    [SerializeField, Min(1), InspectorName("数字提示最大字号")] int clueFontSize = 14;
+    [SerializeField, Min(1), InspectorName("数字提示最小字号")] int clueFontMinSize = 12;
     [SerializeField] FontStyle clueFontStyle = FontStyle.Normal;
     [SerializeField, Range(.1f, 1f)] float boardWidthRatio = .9f;
     [SerializeField, Min(0f)] float backgroundTopPadding = 18f;
@@ -269,7 +270,8 @@ public partial class LevelEditorRuntime : MonoBehaviour
             {
                 ApplyCell(cell.transform, level.GetCell(x, y));
                 cell.AddComponent<CellClick>().Init(() => EditCell(x, y));
-            }, padding, clueFontSize, clueFontStyle, boardWidthRatio);
+            }, padding, clueFontSize, clueFontStyle, boardWidthRatio,
+            minFontSize: clueFontMinSize);
         boardLayout.SetSeparatorOpacity(1f);
         if (ambiguousRows != null || ambiguousColumns != null)
             boardLayout.SetAmbiguousLines(ambiguousRows, ambiguousColumns);

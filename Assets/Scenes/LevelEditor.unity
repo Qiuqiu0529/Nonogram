@@ -382,6 +382,7 @@ MonoBehaviour:
   levelBackgroundPrefab: {fileID: 5279527294234434859, guid: 3b0dd9a958160da41baf3fd00c4702db, type: 3}
   clueFont: {fileID: 12800000, guid: 1f236d959a2a4904e9805f20b1e9a762, type: 3}
   clueFontSize: 18
+  clueFontMinSize: 12
   clueFontStyle: 0
   boardWidthRatio: 0.96
   backgroundTopPadding: 18

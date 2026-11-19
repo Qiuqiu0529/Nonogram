@@ -1,0 +1,758 @@
+{
+    "schemaVersion": 1,
+    "id": "c79eb303c68c4bbc89324758a4e449d3",
+    "title": "猫咪新关卡",
+    "difficulty": 2,
+    "width": 11,
+    "height": 8,
+    "clueDisplay": 0,
+    "brushes": [
+        {
+            "id": "brush-1",
+            "name": "粉色圆点",
+            "colorHex": "#FFB453",
+            "shape": "●"
+        },
+        {
+            "id": "brush-2",
+            "name": "画笔 2",
+            "colorHex": "#628CDF",
+            "shape": "diamond"
+        }
+    ],
+    "cells": [
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 0,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 1
+        },
+        {
+            "state": 1,
+            "brushId": 0
+        }
+    ],
+    "clues": {
+        "rows": [
+            {
+                "runs": [
+                    {
+                        "length": 11,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 4,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 5,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 3,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 3,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 4,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 4,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            }
+        ],
+        "columns": [
+            {
+                "runs": [
+                    {
+                        "length": 3,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 3,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 3,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 4,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 3,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 4,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 1,
+                        "brushId": 1
+                    }
+                ]
+            },
+            {
+                "runs": [
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 1
+                    },
+                    {
+                        "length": 2,
+                        "brushId": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "playtest": {
+        "attempts": 1,
+        "clears": 0,
+        "latestClearSeconds": 0.0,
+        "bestClearSeconds": 0.0,
+        "totalClearSeconds": 0.0
+    }
+}

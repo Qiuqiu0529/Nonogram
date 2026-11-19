@@ -433,7 +433,9 @@ namespace Nonogram
                     button.targetGraphic = inside;
                     button.transition = Selectable.Transition.None;
                     button.onClick.AddListener(() => TapTile(index));
-                }, new Vector4(18f, 18f, 48f, 60f), widthRatio: gameBoardWidthRatio);
+                }, new Vector4(18f, 18f, 48f, 60f),
+                fontSize: clueFontMaxSize, widthRatio: gameBoardWidthRatio,
+                minFontSize: clueFontMinSize);
         }
 
         IEnumerator PlayBoardIntro()

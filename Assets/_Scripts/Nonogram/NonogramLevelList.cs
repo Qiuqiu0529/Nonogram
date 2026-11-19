@@ -28,6 +28,9 @@ namespace Nonogram
         [SerializeField] RectTransform nextButtonRoot;
         [SerializeField] GameObject roundBackgroundPrefab;
         [SerializeField] Font clueFont;
+        [Header("数字提示字号范围")]
+        [SerializeField, Min(1)] int clueFontMinSize = 12;
+        [SerializeField, Min(1)] int clueFontMaxSize = 56;
         [SerializeField, Range(.1f, 1f)] float gameBoardWidthRatio = .96f;
         [SerializeField, Range(.05f, 2f)] float victoryRevealFadeDuration = .45f;
         [SerializeField, Range(0f, 3f)] float victoryRevealHoldDuration = .8f;

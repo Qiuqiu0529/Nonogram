@@ -86,7 +86,8 @@ public partial class LevelEditorRuntime
                 playtestTags[index] = tag;
                 playtestTagColors[index] = tag.color;
                 cell.AddComponent<CellClick>().Init(() => TapPlaytest(index));
-            }, padding, clueFontSize, clueFontStyle, boardWidthRatio);
+            }, padding, clueFontSize, clueFontStyle, boardWidthRatio,
+            minFontSize: clueFontMinSize);
         playtestBoardLayout.SetSeparatorOpacity(1f);
         playtestStartedAt = Time.unscaledTime;
         RefreshPlaytestStatus();

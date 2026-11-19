@@ -6,7 +6,7 @@ namespace Nonogram
     {
     public sealed class NonogramBoardLayout : MonoBehaviour
     {
-        int clueFontSize;
+        int clueMaxFontSize, clueMinFontSize;
         FontStyle clueFontStyle;
         float boardWidthRatio;
         float backgroundTopPadding, backgroundLeftPadding, backgroundRightPadding, backgroundBottomPadding;
@@ -29,7 +29,8 @@ namespace Nonogram
 
         public static NonogramBoardLayout Create(RectTransform viewport, GameObject backgroundPrefab,
             GameObject grid, Font font, NonogramLevelData level, bool patterns, Action<GameObject, int, int> setupCell,
-            Vector4 padding, int fontSize = 56, FontStyle fontStyle = FontStyle.Normal, float widthRatio = .9f)
+            Vector4 padding, int fontSize = 56, FontStyle fontStyle = FontStyle.Normal,
+            float widthRatio = .9f, int minFontSize = 12)
         {
             var container = new GameObject("Board Layout", typeof(RectTransform), typeof(NonogramBoardLayout));
             var rect = (RectTransform)container.transform;
@@ -42,7 +43,8 @@ namespace Nonogram
             layout.cellPrefab = grid;
             layout.font = font;
             layout.patternMode = patterns;
-            layout.clueFontSize = fontSize;
+            layout.clueMaxFontSize = Mathf.Max(1, fontSize);
+            layout.clueMinFontSize = Mathf.Clamp(minFontSize, 1, layout.clueMaxFontSize);
             layout.clueFontStyle = fontStyle;
             layout.boardWidthRatio = widthRatio;
             layout.backgroundTopPadding = padding.x;
@@ -108,12 +110,12 @@ namespace Nonogram
             ambiguousColumns = new bool[level.width];
             for (int y = 0; y < rowLabels.Length; y++)
             {
-                rowLabels[y] = Label(rowClues, "", clueFontSize, Vector2.zero, Vector2.zero, TextAnchor.MiddleRight);
+                rowLabels[y] = Label(rowClues, "", clueMaxFontSize, Vector2.zero, Vector2.zero, TextAnchor.MiddleRight);
                 rowLabels[y].fontStyle = clueFontStyle;
             }
             for (int x = 0; x < columnLabels.Length; x++)
             {
-                columnLabels[x] = Label(columnClues, "", clueFontSize, Vector2.zero, Vector2.zero, TextAnchor.LowerCenter);
+                columnLabels[x] = Label(columnClues, "", clueMaxFontSize, Vector2.zero, Vector2.zero, TextAnchor.LowerCenter);
                 columnLabels[x].fontStyle = clueFontStyle;
             }
             cellRects = new RectTransform[level.cells.Length];
@@ -222,34 +224,57 @@ namespace Nonogram
 
         void ArrangeClues(NonogramLevelData level)
         {
-            float fontScale = clueFontSize / 14f;
-            naturalClueWidth = 38f * fontScale;
             for (int y = 0; y < level.height; y++)
             {
                 var label = rowLabels[y];
-                label.fontSize = clueFontSize;
                 label.text = Format(level.clues.rows[y], level, "   ",
                     completedRows[y] || ambiguousRows[y]);
                 label.color = ambiguousRows[y] ? AmbiguousClueColor :
                     completedRows[y] ? CompletedClueColor : ActiveClueColor;
                 SetAmbiguityOutline(label, ambiguousRows[y]);
-                naturalClueWidth = Mathf.Max(naturalClueWidth, Mathf.Ceil(label.preferredWidth) + 4f * fontScale);
             }
-            naturalClueHeight = 0f;
             for (int x = 0; x < level.width; x++)
             {
                 var label = columnLabels[x];
-                label.fontSize = clueFontSize;
                 label.text = Format(level.clues.columns[x], level, "\n",
                     completedColumns[x] || ambiguousColumns[x]);
                 label.color = ambiguousColumns[x] ? AmbiguousClueColor :
                     completedColumns[x] ? CompletedClueColor : ActiveClueColor;
                 SetAmbiguityOutline(label, ambiguousColumns[x]);
-                naturalClueHeight = Mathf.Max(naturalClueHeight,
-                    Mathf.Ceil(label.preferredHeight) + 4f);
             }
             levelBackground.gameObject.SetActive(true);
             FitBoard();
+        }
+
+        float FitClueFontAndGetPitch(float usableWidth, float usableHeight)
+        {
+            float pitch = 1f;
+            for (int size = clueMaxFontSize; size >= clueMinFontSize; size--)
+            {
+                float fontScale = size / 14f;
+                naturalClueWidth = 38f * fontScale;
+                naturalClueHeight = 0f;
+                float rowHeight = 0f;
+                float columnWidth = 0f;
+                foreach (var label in rowLabels)
+                {
+                    label.fontSize = size;
+                    naturalClueWidth = Mathf.Max(naturalClueWidth,
+                        Mathf.Ceil(label.preferredWidth) + 4f * fontScale);
+                    rowHeight = Mathf.Max(rowHeight, Mathf.Ceil(label.preferredHeight));
+                }
+                foreach (var label in columnLabels)
+                {
+                    label.fontSize = size;
+                    naturalClueHeight = Mathf.Max(naturalClueHeight,
+                        Mathf.Ceil(label.preferredHeight) + 4f);
+                    columnWidth = Mathf.Max(columnWidth, Mathf.Ceil(label.preferredWidth));
+                }
+                pitch = Mathf.Min((usableWidth - naturalClueWidth) / displayedLevel.width,
+                    (usableHeight - naturalClueHeight) / displayedLevel.height);
+                if (pitch >= Mathf.Max(rowHeight, columnWidth) + 2f) break;
+            }
+            return Mathf.Max(1f, pitch);
         }
 
         void LateUpdate()
@@ -286,11 +311,11 @@ namespace Nonogram
             float right = Mathf.Max(48f, backgroundRightPadding);
             float bottom = Mathf.Max(48f, backgroundBottomPadding);
             const float gap = 8f;
+            float pitch = FitClueFontAndGetPitch(
+                lastViewportSize.x * boardWidthRatio - left - right - gap,
+                lastViewportSize.y - top - bottom - gap);
             float clueWidth = naturalClueWidth;
             float clueHeight = naturalClueHeight;
-            float pitch = Mathf.Max(1f, Mathf.Min(
-                (lastViewportSize.x * boardWidthRatio - left - right - clueWidth - gap) / displayedLevel.width,
-                (lastViewportSize.y - top - bottom - clueHeight - gap) / displayedLevel.height));
             float width = displayedLevel.width * pitch;
             float height = displayedLevel.height * pitch;
             levelBackground.localScale = Vector3.one;
@@ -306,16 +331,13 @@ namespace Nonogram
             Place(columnClues, center + new Vector2(0, (height + clueHeight) / 2f + gap),
                 new Vector2(width, clueHeight));
 
-            int fontSize = clueFontSize;
             for (int y = 0; y < displayedLevel.height; y++)
             {
-                rowLabels[y].fontSize = fontSize;
                 Place(rowLabels[y].rectTransform, new Vector2(0, height / 2f - (y + .5f) * pitch),
                     new Vector2(clueWidth, pitch));
             }
             for (int x = 0; x < displayedLevel.width; x++)
             {
-                columnLabels[x].fontSize = fontSize;
                 Place(columnLabels[x].rectTransform, new Vector2((x + .5f) * pitch - width / 2f, 0),
                     new Vector2(pitch, clueHeight));
             }
