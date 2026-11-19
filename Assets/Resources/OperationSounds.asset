@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b6b445c0c147c68639276a882ae824, type: 3}
   m_Name: OperationSounds
   m_EditorClassIdentifier:
+  levelOpen: {fileID: 8857672321125218121, guid: 6eea31f2619c4955a644ba1d10bc2450, type: 3}
   fill: {fileID: 8857672321125218121, guid: 1e91392e68744dc780adbe1bcc779130, type: 3}
   mark: {fileID: 8857672321125218121, guid: 497730b672a34f70801bfd27a8e74be3, type: 3}
   unmark: {fileID: 8857672321125218121, guid: fe831857b816431e8869b66d57a330ec, type: 3}
@@ -25,5 +26,8 @@ MonoBehaviour:
   selectBrush: {fileID: 8857672321125218121, guid: 06246eb7fbe94f2aa1106afc830763be, type: 3}
 
   lineComplete: {fileID: 8857672321125218121, guid: ce3276b18d8f4520b64aa3fe2c332fe9, type: 3}
+  nice: {fileID: 8857672321125218121, guid: 2adab8874b01432c86094e000fe17804, type: 3}
+  great: {fileID: 8857672321125218121, guid: 593e74cbf1344bd0b7bb4aed383e6739, type: 3}
+  fantastic: {fileID: 8857672321125218121, guid: 82b5b83df9eb41d0b4d6a3780d0ae7c4, type: 3}
   success: {fileID: 8857672321125218121, guid: d696be3955424bc8b8781c18e7557c1f, type: 3}
   failure: {fileID: 8857672321125218121, guid: 2127cb0a86a741d288a1837ba60ef239, type: 3}

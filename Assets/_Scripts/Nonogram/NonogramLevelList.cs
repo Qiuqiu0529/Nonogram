@@ -29,6 +29,8 @@ namespace Nonogram
         [SerializeField] GameObject roundBackgroundPrefab;
         [SerializeField] Font clueFont;
         [SerializeField, Range(.1f, 1f)] float gameBoardWidthRatio = .96f;
+        [SerializeField, Range(.05f, 2f)] float victoryRevealFadeDuration = .45f;
+        [SerializeField, Range(0f, 3f)] float victoryRevealHoldDuration = .8f;
         [SerializeField] NonogramLevelListData listData;
         [SerializeField] UnityEvent<string> onLevelSelected = new UnityEvent<string>();
 

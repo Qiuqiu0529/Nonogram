@@ -10,11 +10,26 @@ namespace Nonogram
         public enum Result { NoSolution, Unique, Multiple, Inconclusive }
         const int PatternBudget = 200000;
 
+        public sealed class Report
+        {
+            public Result result;
+            public bool[] differingRows;
+            public bool[] differingColumns;
+        }
+
         public static Result Check(int width, int height, NonogramLineClues clues)
         {
-            var search = new Search(width, height, clues);
+            return CheckDetailed(width, height, clues, null).result;
+        }
+
+        /// <summary>Compares an alternative solution with the authored cells when supplied.</summary>
+        public static Report CheckDetailed(int width, int height, NonogramLineClues clues, int[] authored)
+        {
+            if (authored != null && authored.Length != width * height)
+                throw new ArgumentException("Authored cell count must equal width × height.", nameof(authored));
+            var search = new Search(width, height, clues, authored);
             try { return search.Run(); }
-            catch (LimitReached) { return Result.Inconclusive; }
+            catch (LimitReached) { return new Report { result = Result.Inconclusive }; }
         }
 
         sealed class LimitReached : Exception { }
@@ -23,25 +38,45 @@ namespace Nonogram
         {
             readonly int width, height;
             readonly NonogramLineClues clues;
+            readonly int[] authored;
             readonly Stopwatch clock = Stopwatch.StartNew();
             List<int[]>[] rows;
+            int[][] selectedRows;
+            int[] firstSolution, alternativeSolution;
             int patterns, solutions;
 
-            public Search(int width, int height, NonogramLineClues clues)
+            public Search(int width, int height, NonogramLineClues clues, int[] authored)
             {
                 this.width = width;
                 this.height = height;
                 this.clues = clues;
+                this.authored = authored;
             }
 
-            public Result Run()
+            public Report Run()
             {
                 rows = new List<int[]>[height];
+                selectedRows = new int[height][];
                 for (int y = 0; y < height; y++) rows[y] = Generate(width, clues.rows[y].runs);
                 var columns = new List<int[]>[width];
                 for (int x = 0; x < width; x++) columns[x] = Generate(height, clues.columns[x].runs);
                 Visit(0, columns);
-                return solutions == 0 ? Result.NoSolution : solutions == 1 ? Result.Unique : Result.Multiple;
+                var report = new Report
+                {
+                    result = solutions == 0 ? Result.NoSolution :
+                        solutions == 1 ? Result.Unique : Result.Multiple
+                };
+                if (report.result != Result.Multiple) return report;
+                var reference = authored ?? firstSolution;
+                report.differingRows = new bool[height];
+                report.differingColumns = new bool[width];
+                for (int index = 0; index < alternativeSolution.Length; index++)
+                {
+                    if (reference[index] == alternativeSolution[index]) continue;
+                    report.differingRows[index / width] = true;
+                    report.differingColumns[index % width] = true;
+                }
+                return report;
             }
 
             void Guard()
@@ -87,12 +122,34 @@ namespace Nonogram
                 Guard();
                 if (y == height)
                 {
-                    solutions++;
+                    var solution = new int[width * height];
+                    for (int row = 0; row < height; row++)
+                        Array.Copy(selectedRows[row], 0, solution, row * width, width);
+                    if (authored != null)
+                    {
+                        if (!SameSolution(authored, solution))
+                        {
+                            alternativeSolution = solution;
+                            solutions = 2;
+                        }
+                        else solutions = 1;
+                    }
+                    else if (firstSolution == null)
+                    {
+                        firstSolution = solution;
+                        solutions = 1;
+                    }
+                    else
+                    {
+                        alternativeSolution = solution;
+                        solutions = 2;
+                    }
                     return;
                 }
                 foreach (var row in rows[y])
                 {
                     Guard();
+                    selectedRows[y] = row;
                     var filtered = new List<int[]>[width];
                     bool compatible = true;
                     for (int x = 0; x < width; x++)
@@ -109,6 +166,14 @@ namespace Nonogram
                     Visit(y + 1, filtered);
                     if (solutions >= 2) return;
                 }
+            }
+
+            static bool SameSolution(int[] a, int[] b)
+            {
+                if (a.Length != b.Length) return false;
+                for (int i = 0; i < a.Length; i++)
+                    if (a[i] != b[i]) return false;
+                return true;
             }
         }
     }

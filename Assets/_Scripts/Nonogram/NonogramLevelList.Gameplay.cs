@@ -90,18 +90,15 @@ namespace Nonogram
         {
             starting = true;
             levelButton.interactable = false;
-            NonogramLevelData first = null;
+            NonogramLevelData last = null;
             NonogramLevelData next = null;
-            int firstNumber = 0, nextNumber = 0;
+            int lastNumber = 0, nextNumber = 0;
             for (int i = 0; listData && i < listData.Count && next == null; i++)
             {
                 yield return NonogramCatalog.LoadLevel(listData.GetFile(i), level =>
                 {
-                    if (first == null)
-                    {
-                        first = level;
-                        firstNumber = i + 1;
-                    }
+                    last = level;
+                    lastNumber = i + 1;
                     if (NonogramProgress.Get(level.id).completions == 0)
                     {
                         next = level;
@@ -113,8 +110,8 @@ namespace Nonogram
             levelButton.interactable = true;
             if (next == null)
             {
-                next = first;
-                nextNumber = firstNumber;
+                next = last;
+                nextNumber = lastNumber;
             }
             SetDifficultySkin(levelButton, next?.difficulty ?? LevelDifficulty.Normal);
             var homeLevelLabel = levelButton.GetComponentInChildren<TMPro.TMP_Text>(true);
@@ -163,6 +160,7 @@ namespace Nonogram
                 attempt = NonogramProgress.BeginAttempt(level.id);
             revealingBoard = true;
             RefreshRoundStatus();
+            if (levelOpenSoundFB) PlayOperationSound(levelOpenSoundFB);
             boardIntro = StartCoroutine(PlayBoardIntro());
         }
 
@@ -227,7 +225,7 @@ namespace Nonogram
                 }, error => Debug.LogWarning(error, this));
             }
             while (scorePop != null || activeLineRewards > 0) yield return null;
-            nextLevelLoad = null;
+            yield return RevealVictoryPattern();
             if (nextLevelButton)
             {
                 SetDifficultySkin(nextLevelButton, followingLevel?.difficulty ?? LevelDifficulty.Normal);
@@ -241,6 +239,56 @@ namespace Nonogram
                 if (successSoundFB) PlayOperationSound(successSoundFB);
                 PlayResultPresentation(successPanel, true);
             }
+            nextLevelLoad = null;
+        }
+
+        IEnumerator RevealVictoryPattern()
+        {
+            if (roundBoardLayout == null || round == null || tileRects == null) yield break;
+
+            var hiddenTiles = new CanvasGroup[tileRects.Length];
+            for (int i = 0; i < tileRects.Length; i++)
+            {
+                if (round.GetTile(i) == NonogramRound.Tile.Filled) continue;
+                if (!tileRects[i].TryGetComponent(out CanvasGroup group))
+                    group = tileRects[i].gameObject.AddComponent<CanvasGroup>();
+                hiddenTiles[i] = group;
+            }
+
+            float duration = Mathf.Max(.01f, victoryRevealFadeDuration);
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float opacity = 1f - Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / duration));
+                roundBoardLayout.SetClueOpacity(opacity);
+                roundBoardLayout.SetSeparatorOpacity(opacity);
+                foreach (var group in hiddenTiles)
+                    if (group) group.alpha = opacity;
+                yield return null;
+            }
+
+            roundBoardLayout.SetClueOpacity(0f);
+            roundBoardLayout.SetSeparatorOpacity(0f);
+            foreach (var group in hiddenTiles)
+                if (group) group.alpha = 0f;
+
+            // Remove the normal two-pixel cell gaps and the inset on filled artwork.
+            // The board is rebuilt for every round, so these reveal-only changes do not
+            // affect the next level's playable grid.
+            roundBoardLayout.SetVictoryCellSpacing();
+            for (int i = 0; i < tileImages.Length; i++)
+            {
+                if (round.GetTile(i) != NonogramRound.Tile.Filled) continue;
+                var art = tileImages[i].rectTransform;
+                art.anchorMin = Vector2.zero;
+                art.anchorMax = Vector2.one;
+                art.offsetMin = Vector2.zero;
+                art.offsetMax = Vector2.zero;
+            }
+
+            if (victoryRevealHoldDuration > 0f)
+                yield return new WaitForSecondsRealtime(victoryRevealHoldDuration);
         }
 
         void PlayFollowingRound()
@@ -408,6 +456,7 @@ namespace Nonogram
                 fish.localScale = Vector3.zero;
             }
             roundBoardLayout.SetClueOpacity(0f);
+            roundBoardLayout.SetSeparatorOpacity(0f);
             for (int i = 0; i < tileRects.Length; i++)
             {
                 var tile = tileRects[i];
@@ -459,6 +508,7 @@ namespace Nonogram
                 clueTime += Time.unscaledDeltaTime;
                 float opacity = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(clueTime / clueFadeDuration));
                 roundBoardLayout.SetClueOpacity(opacity);
+                roundBoardLayout.SetSeparatorOpacity(opacity);
                 SetHintOpacity(opacity);
             }
             boardIntro = null;
@@ -495,12 +545,13 @@ namespace Nonogram
             AdvanceTutorialTap();
             if (round.Chances < chancesBefore)
             {
+                ResetPraiseStreak();
                 PlayOperationSound(mistakeSoundFB);
                 StartCoroutine(ShakeMistake(index));
                 LoseFish();
             }
             else AnimateTileChange(index, previous);
-            RefreshRoundStatus();
+            RefreshRoundStatus(round.GetTile(index) == NonogramRound.Tile.Filled);
         }
 
         void RevealTile()
@@ -640,6 +691,7 @@ namespace Nonogram
             if (round == null || !roundBoardLayout || patternMode == enabled) return;
             patternMode = enabled;
             roundBoardLayout.SetPatternMode(enabled);
+            if (lesson == Lesson.ColorGreen) SetLesson(lesson);
             RefreshBrushControls();
             for (int index = 0; index < tileImages.Length; index++)
                 if (round.GetTile(index) == NonogramRound.Tile.Filled)
@@ -684,9 +736,9 @@ namespace Nonogram
             }
         }
 
-        void RefreshRoundStatus()
+        void RefreshRoundStatus(bool manualFill = false)
         {
-            RewardCompletedLines();
+            RewardCompletedLines(manualFill);
             RefreshScoreDisplay();
             bool canPlay = !revealingBoard && round.Outcome == NonogramRound.Result.Playing;
             RefreshBrushControls();
@@ -694,12 +746,13 @@ namespace Nonogram
             retryButton.gameObject.SetActive(!revealingBoard &&
                 ((round.Outcome == NonogramRound.Result.Won && (!successPanel || !nextLevelButton)) ||
                  (round.Outcome == NonogramRound.Result.Lost && (!failPanel || !replayLevelButton))));
-            if (revealingBoard || !TutorialAllowsFreePlay || round.Outcome != NonogramRound.Result.Won || victoryShown) return;
+            if (revealingBoard || round.Outcome != NonogramRound.Result.Won || victoryShown) return;
             if (attempt != null)
             {
                 NonogramProgress.CompleteAttempt(attempt, Time.unscaledTime - startedAt, round.Stars, round.Score);
                 attempt = null;
             }
+            if (lesson == Lesson.Hint) ShowFishLesson();
             if (lesson == Lesson.Fish) return;
             victoryShown = true;
             if (successPanel && nextLevelButton) nextLevelLoad = StartCoroutine(ShowVictory());

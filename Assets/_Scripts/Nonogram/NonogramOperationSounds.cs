@@ -5,6 +5,7 @@ namespace Nonogram
 {
     public sealed class NonogramOperationSounds : ScriptableObject
     {
+        public MMF_Player levelOpen;
         public MMF_Player fill;
         public MMF_Player mark;
         public MMF_Player unmark;
@@ -16,6 +17,9 @@ namespace Nonogram
         public MMF_Player markMode;
         public MMF_Player selectBrush;
         public MMF_Player lineComplete;
+        public MMF_Player nice;
+        public MMF_Player great;
+        public MMF_Player fantastic;
         public MMF_Player success;
         public MMF_Player failure;
     }

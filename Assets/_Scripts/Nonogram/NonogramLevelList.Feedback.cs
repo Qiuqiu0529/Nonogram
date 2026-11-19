@@ -6,6 +6,7 @@ namespace Nonogram
     public sealed partial class NonogramLevelList
     {
         [Header("Operation soundFB prefabs")]
+        [SerializeField] MMF_Player levelOpenSoundFB;
         [SerializeField] MMF_Player fillSoundFB;
         [SerializeField] MMF_Player markSoundFB;
         [SerializeField] MMF_Player unmarkSoundFB;
@@ -17,6 +18,9 @@ namespace Nonogram
         [SerializeField] MMF_Player markModeSoundFB;
         [SerializeField] MMF_Player selectBrushSoundFB;
         [SerializeField] MMF_Player lineCompleteSoundFB;
+        [SerializeField] MMF_Player niceSoundFB;
+        [SerializeField] MMF_Player greatSoundFB;
+        [SerializeField] MMF_Player fantasticSoundFB;
         readonly System.Collections.Generic.Dictionary<MMF_Player, MMF_Player> operationSounds =
             new System.Collections.Generic.Dictionary<MMF_Player, MMF_Player>();
         UICellFeedback[] cellFeedbacks;
@@ -26,6 +30,7 @@ namespace Nonogram
             var defaults = Resources.Load<NonogramOperationSounds>("OperationSounds");
             if (defaults)
             {
+                if (!levelOpenSoundFB) levelOpenSoundFB = defaults.levelOpen;
                 if (!fillSoundFB) fillSoundFB = defaults.fill;
                 if (!markSoundFB) markSoundFB = defaults.mark;
                 if (!unmarkSoundFB) unmarkSoundFB = defaults.unmark;
@@ -37,6 +42,9 @@ namespace Nonogram
                 if (!markModeSoundFB) markModeSoundFB = defaults.markMode;
                 if (!selectBrushSoundFB) selectBrushSoundFB = defaults.selectBrush;
                 if (!lineCompleteSoundFB) lineCompleteSoundFB = defaults.lineComplete;
+                if (!niceSoundFB) niceSoundFB = defaults.nice;
+                if (!greatSoundFB) greatSoundFB = defaults.great;
+                if (!fantasticSoundFB) fantasticSoundFB = defaults.fantastic;
                 if (!successSoundFB) successSoundFB = defaults.success;
                 if (!failureSoundFB) failureSoundFB = defaults.failure;
             }

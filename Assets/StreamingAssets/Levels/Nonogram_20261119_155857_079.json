@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "2ad8f16392934ed4a236b95f3c01e65d",
     "title": "猫咪新关卡",
-    "difficulty": 0,
+    "difficulty": 1,
     "width": 10,
     "height": 10,
     "clueDisplay": 0,
@@ -653,5 +653,12 @@
                 ]
             }
         ]
+    },
+    "playtest": {
+        "attempts": 1,
+        "clears": 1,
+        "latestClearSeconds": 211.29965209960938,
+        "bestClearSeconds": 211.29965209960938,
+        "totalClearSeconds": 211.29965209960938
     }
 }

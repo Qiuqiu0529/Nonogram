@@ -151,8 +151,14 @@ namespace Nonogram
         void SelectRoundBrush(int index)
         {
             if (revealingBoard || marking || round?.Outcome != NonogramRound.Result.Playing) return;
+            if (!AllowTutorialBrush(index))
+            {
+                PlayOperationSound(blockedButtonSoundFB);
+                return;
+            }
             if (activeRoundBrush == index) return;
             activeRoundBrush = index;
+            AdvanceTutorialBrush();
             RefreshBrushControls();
             PopBrushIcon(roundBrushIcons[index].transform);
             PopBrushIcon(brushIcon ? brushIcon.transform : null);

@@ -15,6 +15,7 @@ public partial class LevelEditorRuntime : MonoBehaviour
     static Sprite[] shapeSprites;
     NonogramLevelData level;
     bool checkingUniqueSolution;
+    bool[] ambiguousRows, ambiguousColumns;
     string savedLevelFilename;
     string savedLevelSnapshot;
     GameObject cellPrefab;
@@ -191,6 +192,7 @@ public partial class LevelEditorRuntime : MonoBehaviour
 
     void CreateLevel()
     {
+        ClearAmbiguity();
         savedLevelFilename = null;
         savedLevelSnapshot = null;
         patternView = false;
@@ -268,11 +270,15 @@ public partial class LevelEditorRuntime : MonoBehaviour
                 ApplyCell(cell.transform, level.GetCell(x, y));
                 cell.AddComponent<CellClick>().Init(() => EditCell(x, y));
             }, padding, clueFontSize, clueFontStyle, boardWidthRatio);
+        boardLayout.SetSeparatorOpacity(1f);
+        if (ambiguousRows != null || ambiguousColumns != null)
+            boardLayout.SetAmbiguousLines(ambiguousRows, ambiguousColumns);
     }
 
     void EditCell(int x,int y)
     {
         if(level==null)return;var cell=level.GetCell(x,y);
+        ClearAmbiguity();
         if(markMode)cell.state=cell.state==CellState.Marked?CellState.Blank:CellState.Marked;
         else if(cell.state==CellState.Filled&&cell.brushId==activeBrush)cell.state=CellState.Blank;
         else{cell.state=CellState.Filled;cell.brushId=activeBrush;}
@@ -311,6 +317,7 @@ public partial class LevelEditorRuntime : MonoBehaviour
             return;
         }
         if (checkingUniqueSolution) return;
+        ClearAmbiguity();
         checkingUniqueSolution = true;
         try
         {
@@ -320,22 +327,31 @@ public partial class LevelEditorRuntime : MonoBehaviour
             int checkedHeight = checkedLevel.height;
             // RebuildClues replaces the clue object, so later drawing cannot change this snapshot.
             var checkedClues = checkedLevel.clues;
+            var authored = new int[checkedLevel.cells.Length];
+            for (int i = 0; i < authored.Length; i++)
+                authored[i] = checkedLevel.cells[i].state == CellState.Filled
+                    ? checkedLevel.cells[i].brushId + 1 : 0;
             statusLabel.text = "正在检查唯一解…";
-            var result = await System.Threading.Tasks.Task.Run(() =>
-                NonogramUniqueness.Check(checkedWidth, checkedHeight, checkedClues));
+            var report = await System.Threading.Tasks.Task.Run(() =>
+                NonogramUniqueness.CheckDetailed(checkedWidth, checkedHeight, checkedClues, authored));
             if (!this || !statusLabel) return;
             if (level != checkedLevel || snapshot != NonogramLevelJson.Serialize(level, false))
             {
                 statusLabel.text = "关卡已修改，请重新检查";
                 return;
             }
-            switch (result)
+            switch (report.result)
             {
                 case NonogramUniqueness.Result.Unique:
                     statusLabel.text = "检查通过：该关卡有且只有一个解";
                     break;
                 case NonogramUniqueness.Result.Multiple:
-                    statusLabel.text = "存在多个解，请调整图案后再检查";
+                    ambiguousRows = report.differingRows;
+                    ambiguousColumns = report.differingColumns;
+                    if (boardLayout) boardLayout.SetAmbiguousLines(ambiguousRows, ambiguousColumns);
+                    statusLabel.text = "存在多个解：橙色标出分歧的" +
+                        DescribeAmbiguousLines(ambiguousRows, "行") + "、" +
+                        DescribeAmbiguousLines(ambiguousColumns, "列");
                     break;
                 case NonogramUniqueness.Result.NoSolution:
                     statusLabel.text = "无解，请检查行列线索";
@@ -351,6 +367,28 @@ public partial class LevelEditorRuntime : MonoBehaviour
             Debug.LogException(exception);
         }
         finally { checkingUniqueSolution = false; }
+    }
+
+    void ClearAmbiguity()
+    {
+        ambiguousRows = null;
+        ambiguousColumns = null;
+        if (boardLayout) boardLayout.SetAmbiguousLines(null, null);
+    }
+
+    static string DescribeAmbiguousLines(bool[] lines, string suffix)
+    {
+        if (lines == null) return "未知" + suffix;
+        var numbers = new List<string>();
+        int total = 0;
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (!lines[i]) continue;
+            total++;
+            if (numbers.Count < 5) numbers.Add((i + 1).ToString());
+        }
+        return total == 0 ? "未知" + suffix :
+            "第" + string.Join("、", numbers) + (total > numbers.Count ? "等" : "") + suffix;
     }
 
     void SaveLevel()

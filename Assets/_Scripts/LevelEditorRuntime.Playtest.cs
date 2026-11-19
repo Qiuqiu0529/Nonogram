@@ -71,7 +71,7 @@ public partial class LevelEditorRuntime
         playtestTagColors = new Color[playtestLevel.cells.Length];
         var padding = new Vector4(backgroundTopPadding, backgroundLeftPadding,
             backgroundRightPadding, backgroundBottomPadding);
-        NonogramBoardLayout.Create(viewport, levelBackgroundPrefab, cellPrefab,
+        var playtestBoardLayout = NonogramBoardLayout.Create(viewport, levelBackgroundPrefab, cellPrefab,
             clueFont ? clueFont : uiFont, playtestLevel, patternView, (cell, x, y) =>
             {
                 int index = y * playtestLevel.width + x;
@@ -87,6 +87,7 @@ public partial class LevelEditorRuntime
                 playtestTagColors[index] = tag.color;
                 cell.AddComponent<CellClick>().Init(() => TapPlaytest(index));
             }, padding, clueFontSize, clueFontStyle, boardWidthRatio);
+        playtestBoardLayout.SetSeparatorOpacity(1f);
         playtestStartedAt = Time.unscaledTime;
         RefreshPlaytestStatus();
     }

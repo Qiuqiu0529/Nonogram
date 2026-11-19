@@ -10,7 +10,7 @@
         {
             "id": "brush-1",
             "name": "粉色圆点",
-            "colorHex": "#76564C",
+            "colorHex": "#F593A9",
             "shape": "●"
         }
     ],
@@ -205,5 +205,12 @@
                 ]
             }
         ]
+    },
+    "playtest": {
+        "attempts": 0,
+        "clears": 0,
+        "latestClearSeconds": 0.0,
+        "bestClearSeconds": 0.0,
+        "totalClearSeconds": 0.0
     }
 }

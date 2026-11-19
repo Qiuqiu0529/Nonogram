@@ -10,13 +10,26 @@ namespace Nonogram
         bool[] rewardedRows, rewardedColumns;
         readonly List<Coroutine> lineRewards = new List<Coroutine>();
         int activeLineRewards;
+        int completedLineStreak;
+        int highestPraiseTier;
+        float lastPraiseAt = float.NegativeInfinity;
+        [SerializeField, Range(0f, 10f)] float praiseCooldown = 4f;
 
-        void RewardCompletedLines()
+        void ResetPraiseStreak()
         {
+            completedLineStreak = 0;
+            highestPraiseTier = 0;
+        }
+
+        void RewardCompletedLines(bool manualFill)
+        {
+            int completed = 0;
             for (int y = 0; y < rewardedRows.Length; y++)
             {
                 if (rewardedRows[y] || !round.IsRowComplete(y)) continue;
                 rewardedRows[y] = true;
+                roundBoardLayout.SetLineCompleted(true, y);
+                completed++;
                 activeLineRewards++;
                 lineRewards.Add(StartCoroutine(PlayLineReward(true, y)));
             }
@@ -24,9 +37,36 @@ namespace Nonogram
             {
                 if (rewardedColumns[x] || !round.IsColumnComplete(x)) continue;
                 rewardedColumns[x] = true;
+                roundBoardLayout.SetLineCompleted(false, x);
+                completed++;
                 activeLineRewards++;
                 lineRewards.Add(StartCoroutine(PlayLineReward(false, x)));
             }
+            if (completed == 0 || round.Outcome == NonogramRound.Result.Won) return;
+            if (manualFill)
+            {
+                completedLineStreak += completed;
+                int tier = completedLineStreak >= 6 ? 3 :
+                    completedLineStreak >= 4 ? 2 : completedLineStreak >= 2 ? 1 : 0;
+                if (tier > highestPraiseTier && Time.unscaledTime - lastPraiseAt >= praiseCooldown)
+                {
+                    var voice = tier == 3 ? fantasticSoundFB : tier == 2 ? greatSoundFB : niceSoundFB;
+                    if (voice)
+                    {
+                        PlayOperationSound(voice);
+                        lastPraiseAt = Time.unscaledTime;
+                        highestPraiseTier = tier;
+                        if (tier == 3)
+                        {
+                            completedLineStreak -= 6;
+                            highestPraiseTier = 0;
+                        }
+                        return;
+                    }
+                }
+            }
+            // One sound per move, even when a row and column finish together.
+            if (lineCompleteSoundFB) PlayOperationSound(lineCompleteSoundFB);
         }
 
         static void RippleGraphic(Graphic graphic, float amplitude)
@@ -41,7 +81,6 @@ namespace Nonogram
         {
             var clue = row ? roundBoardLayout.GetRowClueRect(line) : roundBoardLayout.GetColumnClueRect(line);
             RippleGraphic(clue.GetComponent<Graphic>(), 12f);
-            PlayOperationSound(lineCompleteSoundFB);
             var layer = CreateRect("Line Reward Stars", gameOverlay, Vector2.zero, Vector2.one);
             int count = row ? SelectedLevel.width : SelectedLevel.height;
             var stars = new List<Image>();
@@ -101,6 +140,8 @@ namespace Nonogram
             foreach (var routine in lineRewards) StopCoroutine(routine);
             lineRewards.Clear();
             activeLineRewards = 0;
+            ResetPraiseStreak();
+            lastPraiseAt = float.NegativeInfinity;
         }
     }
 }

@@ -5,7 +5,8 @@ namespace Nonogram
 {
     public sealed partial class NonogramLevelList
     {
-        enum Lesson { None, FirstFill, SecondFill, LeftColumn, RightColumn, SplitRow, Hint, Fish }
+        enum Lesson { None, FirstFill, SecondFill, LeftColumn, RightColumn, SplitRow, Hint, Fish,
+            ColorGreen, ColorChooseBrown, ColorBrown }
         Lesson lesson;
         int lessonRow, checkRow;
         float fishTipEndsAt;
@@ -18,10 +19,21 @@ namespace Nonogram
 
         void BeginTutorial()
         {
-            if (currentLevelNumber != 1 || SelectedLevel.brushes.Length != 1 ||
-                NonogramProgress.Get(SelectedLevel.id).completions > 0 ||
-                !brushModeButton || !markModeButton || !hintButton)
+            if (NonogramProgress.Get(SelectedLevel.id).completions > 0) return;
+            if (currentLevelNumber == 13)
+            {
+                if (SelectedLevel.width != 9 || SelectedLevel.height != 9 ||
+                    SelectedLevel.brushes.Length < 2) return;
+                var colorColumn = SelectedLevel.clues.columns[4].runs;
+                if (colorColumn.Length == 2 &&
+                    colorColumn[0].length == 7 && colorColumn[0].brushId == 0 &&
+                    colorColumn[1].length == 2 && colorColumn[1].brushId == 1 &&
+                    roundBrushButtons.Count >= 2 && CreateTutorialUI())
+                    SetLesson(Lesson.ColorGreen);
                 return;
+            }
+            if (currentLevelNumber != 1 || SelectedLevel.brushes.Length != 1 ||
+                !brushModeButton || !markModeButton || !hintButton) return;
 
             lessonRow = checkRow = -1;
             int width = SelectedLevel.width;
@@ -97,6 +109,11 @@ namespace Nonogram
                     : "1 1 表示两组各 1 格，中间至少空 1 格。试着填完第一行。"; break;
                 case Lesson.Hint: lessonText.text = "遇到困难时，可以使用“提示”。"; break;
                 case Lesson.Fish: lessonText.text = "小鱼干代表剩余尝试次数，小心推理吧！"; break;
+                case Lesson.ColorGreen: lessonText.text = patternMode
+                    ? "线索旁的图形表示要用的画笔。第 5 列先连续填 7 格，试着用绿色画笔填满。"
+                    : "数字的颜色就是要填的颜色。第 5 列绿色 7：用绿色画笔填满上面 7 格。"; break;
+                case Lesson.ColorChooseBrown: lessonText.text = "接下来是棕色 2。填格前，先选棕色画笔。"; break;
+                case Lesson.ColorBrown: lessonText.text = "不同颜色可以直接相邻，不用留空格。紧接着填满下面 2 格！"; break;
             }
             UpdateTutorialLayout();
             RefreshHintButton(TutorialAllowsHint);
@@ -109,6 +126,23 @@ namespace Nonogram
             RectTransform first, last, pointer;
             if (lesson == Lesson.Fish) first = last = pointer = tryDisplay;
             else if (lesson == Lesson.Hint) first = last = pointer = (RectTransform)hintButton.transform;
+            else if (lesson == Lesson.ColorChooseBrown)
+                first = last = pointer = (RectTransform)roundBrushButtons[1].transform;
+            else if (lesson == Lesson.ColorGreen || lesson == Lesson.ColorBrown)
+            {
+                const int column = 4;
+                int firstRow = lesson == Lesson.ColorGreen ? 0 : 7;
+                int lastRow = lesson == Lesson.ColorGreen ? 6 : 8;
+                first = roundBoardLayout.GetColumnClueRect(column);
+                last = tileRects[lastRow * width + column];
+                pointer = last;
+                for (int y = firstRow; y <= lastRow; y++)
+                    if (round.GetTile(y * width + column) != NonogramRound.Tile.Filled)
+                    {
+                        pointer = tileRects[y * width + column];
+                        break;
+                    }
+            }
             else if (lesson == Lesson.SplitRow && marking)
                 first = last = pointer = (RectTransform)brushModeButton.transform;
             else if (lesson == Lesson.LeftColumn || lesson == Lesson.RightColumn)
@@ -214,13 +248,38 @@ namespace Nonogram
                 case Lesson.LeftColumn: return marking && index % width == 0;
                 case Lesson.RightColumn: return marking && index % width == width - 1;
                 case Lesson.SplitRow: return !marking && index / width == 0;
+                case Lesson.ColorGreen: return !marking && activeRoundBrush == 0 &&
+                    index % width == 4 && index / width < 7;
+                case Lesson.ColorBrown: return !marking && activeRoundBrush == 1 &&
+                    index % width == 4 && index / width >= 7;
                 default: return false;
             }
+        }
+
+        bool AllowTutorialBrush(int index) =>
+            (lesson != Lesson.ColorGreen && lesson != Lesson.ColorChooseBrown &&
+             lesson != Lesson.ColorBrown) ||
+            index == (lesson == Lesson.ColorGreen ? 0 : 1);
+
+        void AdvanceTutorialBrush()
+        {
+            if (lesson == Lesson.ColorChooseBrown && activeRoundBrush == 1)
+                SetLesson(Lesson.ColorBrown);
         }
 
         void AdvanceTutorialTap()
         {
             int width = SelectedLevel.width;
+            if (lesson == Lesson.ColorGreen || lesson == Lesson.ColorBrown)
+            {
+                int firstRow = lesson == Lesson.ColorGreen ? 0 : 7;
+                int lastRow = lesson == Lesson.ColorGreen ? 6 : 8;
+                for (int y = firstRow; y <= lastRow; y++)
+                    if (round.GetTile(y * width + 4) != NonogramRound.Tile.Filled) return;
+                if (lesson == Lesson.ColorGreen) SetLesson(Lesson.ColorChooseBrown);
+                else FinishTutorial();
+                return;
+            }
             if (lesson == Lesson.LeftColumn || lesson == Lesson.RightColumn)
             {
                 int column = lesson == Lesson.LeftColumn ? 0 : width - 1;
@@ -245,6 +304,8 @@ namespace Nonogram
         }
 
         bool AllowTutorialMode(bool mark) => TutorialAllowsFreePlay ||
+            ((lesson == Lesson.ColorGreen || lesson == Lesson.ColorChooseBrown ||
+              lesson == Lesson.ColorBrown) && !mark) ||
             (lesson == Lesson.LeftColumn && mark) || (lesson == Lesson.SplitRow && !mark);
 
         void AdvanceTutorialMode()

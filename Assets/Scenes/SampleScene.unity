@@ -1028,6 +1028,7 @@ MonoBehaviour:
   onLevelSelected:
     m_PersistentCalls:
       m_Calls: []
+  levelOpenSoundFB: {fileID: 8857672321125218121, guid: 6eea31f2619c4955a644ba1d10bc2450, type: 3}
   fillSoundFB: {fileID: 8857672321125218121, guid: 1e91392e68744dc780adbe1bcc779130, type: 3}
   markSoundFB: {fileID: 8857672321125218121, guid: 497730b672a34f70801bfd27a8e74be3, type: 3}
   unmarkSoundFB: {fileID: 8857672321125218121, guid: fe831857b816431e8869b66d57a330ec, type: 3}
@@ -1039,6 +1040,10 @@ MonoBehaviour:
   markModeSoundFB: {fileID: 8857672321125218121, guid: 604740e69c2445c386db9d5c5d2118f1, type: 3}
   selectBrushSoundFB: {fileID: 8857672321125218121, guid: 06246eb7fbe94f2aa1106afc830763be, type: 3}
   lineCompleteSoundFB: {fileID: 8857672321125218121, guid: ce3276b18d8f4520b64aa3fe2c332fe9, type: 3}
+  niceSoundFB: {fileID: 8857672321125218121, guid: 2adab8874b01432c86094e000fe17804, type: 3}
+  greatSoundFB: {fileID: 8857672321125218121, guid: 593e74cbf1344bd0b7bb4aed383e6739, type: 3}
+  fantasticSoundFB: {fileID: 8857672321125218121, guid: 82b5b83df9eb41d0b4d6a3780d0ae7c4, type: 3}
+  praiseCooldown: 4
   successSoundFB: {fileID: 8857672321125218121, guid: d696be3955424bc8b8781c18e7557c1f, type: 3}
   failureSoundFB: {fileID: 8857672321125218121, guid: 2127cb0a86a741d288a1837ba60ef239, type: 3}
   successParticlePrefab: {fileID: 0}
@@ -7126,37 +7131,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427079617}
   m_CullTransparentMesh: 1
---- !u!1 &460639129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 460639130}
-  m_Layer: 0
-  m_Name: EditorTestAS_WillAutoDestroy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &460639130
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460639129}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &462595957
 GameObject:
   m_ObjectHideFlags: 0
@@ -23152,4 +23126,3 @@ SceneRoots:
   - {fileID: 800000000007}
   - {fileID: 800000000017}
   - {fileID: 572032217}
-  - {fileID: 460639130}

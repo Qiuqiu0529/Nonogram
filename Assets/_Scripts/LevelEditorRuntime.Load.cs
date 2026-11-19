@@ -131,6 +131,8 @@ public partial class LevelEditorRuntime
             return;
         }
 
+        ClearAmbiguity();
+
         int oldWidth = level.width, oldHeight = level.height;
         var resized = new NonogramCell[width * height];
         for (int y = 0; y < height; y++)
@@ -196,6 +198,7 @@ public partial class LevelEditorRuntime
             if (string.IsNullOrWhiteSpace(loaded.id))
                 loaded.id = Path.GetFileNameWithoutExtension(filename);
 
+            ClearAmbiguity();
             level = loaded;
             savedLevelFilename = filename;
             savedLevelSnapshot = NonogramLevelJson.Serialize(level, false);
